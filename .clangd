@@ -1,0 +1,24 @@
+CompileFlags:
+  Add:
+    - --no-cuda-version-check
+    - --cuda-gpu-arch=sm_80
+    - -Xclang 
+    - -fcuda-allow-variadic-functions
+    - -std=c++17
+  Remove:
+    - -forward-unknown-to-host-compiler
+    - --generate-code*
+    - --generate-dependencies*
+    - -gencode*
+    - --dependepcy-output
+    - --compiler-options
+    - -rdc=*
+    - -Xptxas=-v
+    - -Xcompiler=*
+    - -ccbin*
+    - -gencode
+    - -Xcudafe
+    - --diag_suppress=*
+    - --expt-relaxed-constexpr
+    - --expt-extended-lambda
+    - --dependency-output

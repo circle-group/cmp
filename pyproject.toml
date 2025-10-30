@@ -1,0 +1,49 @@
+[build-system]
+requires = [
+    "setuptools>=69",
+    "torch>=2.3"
+]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "cmp"
+dynamic = ["version"]
+authors = [
+    { "name" = "Caner Korkmaz", "email" = "info@canerkorkmaz.com"}
+]
+description = "Cubical Multiparameter Persistent Homology for PyTorch/CUDA"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License"
+]
+license={file="LICENSE"}
+# license = "MIT"
+# license-files = ["LICEN[CS]E*"]
+keywords = ["persistent homology", "tda", "topological data analysis", "cubical complex", "cubical multiparameter persistence", "cuda", "pytorch", "deep learning", "image", "cubical persistent homology"]
+dependencies = [
+    "torch>=2.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/circle-group/cmp"
+Issues = "https://github.com/circle-group/cmp/issues"
+Repository = "https://github.com/circle-group/cmp.git"
+
+# [tool.setuptools]
+# packages = ["cmp"]
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cmp*"]
+exclude = ["cmp/csrc*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "cmp.__version__"} 
